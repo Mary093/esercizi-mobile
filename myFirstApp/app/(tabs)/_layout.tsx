@@ -31,20 +31,25 @@ export default function AppLayout() {
           tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
         }}
       />
+       <Tabs.Screen
+        name="offerte"
+        options={{
+          title: 'Offerte',
+          tabBarIcon: ({ color }) => <Ionicons name="checkmark" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="checkout"
+        options={{
+          title: 'checkout',
+          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
+        }}
+      />
       
       {/* Nuovo Posizionamento: La rotta dettagli pizza è ora nel Tab Navigator,
           ma impostiamo 'href: null' per nasconderla dalla Tab Bar in fondo. 
           Quando vi navighi, la Tab Bar resta visibile! 
       */}
-      <Tabs.Screen 
-        name="pizza/[id]" 
-        options={{ 
-          title: 'Dettagli Pizza',
-          // **CHIAVE:** Nascondi il Tab
-          href: null, 
-          headerShown: true, // L'header della schermata sarà visibile
-        }} 
-      />
     </Tabs>
   );
 }

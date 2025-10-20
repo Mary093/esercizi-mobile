@@ -2,14 +2,16 @@ import { Stack} from 'expo-router';
 import { AuthProvider, useAuth } from './auth/AuthContext'; 
 import React from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
+import { CartProvider } from './CartContext';
 
 // La funzione di export è il punto di ingresso, qui stabiliamo il Provider
 export default function RootLayout() {
     return (
-        // 🔑 1. DEFINIZIONE UNICA DEL PROVIDER: Avvolge l'intera navigazione.
-        <AuthProvider>
-            <AppNavigator />
-        </AuthProvider>
+        <CartProvider>
+            <AuthProvider>
+                <AppNavigator />
+            </AuthProvider>
+        </CartProvider>
     );
 }
 

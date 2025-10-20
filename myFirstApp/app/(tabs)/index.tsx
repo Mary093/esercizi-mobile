@@ -24,10 +24,6 @@ export default function HomeScreen() {
         });
     };
 
-    const goToCheckout = () => {
-        router.push('/checkout');
-    };
-
     // 🔑 Funzione per eseguire il Logout
     const handleLogout = async () => {
         console.log('Esecuzione Logout da Home...');
@@ -60,16 +56,6 @@ export default function HomeScreen() {
                     <CustomPressable 
                         title={`Dettagli: ${pizzaData.name}`} 
                         onPress={goToDetails} 
-                    />
-                </View>
-
-                <Text style={styles.subtitle}>Nascondi Tab Bar</Text>
-                
-                <View style={styles.buttonWrapper}>
-                    <CustomPressable 
-                        title="Vai al Checkout" 
-                        onPress={goToCheckout} 
-                        color="#ff4500"
                     />
                 </View>
                 
